@@ -18,7 +18,11 @@
 -- TODO: Write your query below
 
 
-
+-- Exercise 1
+SELECT ss.name, ss.routes
+FROM nyc_subway_stations ss
+JOIN nyc_neighborhoods n ON ST_Intersects(ss.geom, n.geom)
+WHERE n.name = 'East Village';
 
 -- Exercise 2: What are all the neighborhoods served by the 7-train?
 -- Expected output: multiple rows with unique neighborhood names
@@ -40,6 +44,11 @@
 
 -- TODO: Write your query below
 
+-- Exercise 2
+SELECT DISTINCT n.name AS neighborhood_name
+FROM nyc_subway_stations ss
+JOIN nyc_neighborhoods n ON ST_Intersects(ss.geom, n.geom)
+WHERE ss.routes LIKE '%7%';
 
 
 
@@ -56,7 +65,11 @@
 
 -- TODO: Write your query below
 
-
+-- Exercise 3
+SELECT SUM(cb.popn_total) AS total_population
+FROM nyc_census_blocks cb
+JOIN nyc_neighborhoods n ON ST_Intersects(cb.geom, n.geom)
+WHERE n.name = 'Financial District';
 
 
 
@@ -78,3 +91,10 @@
 
 
 
+-- Exercise 4
+SELECT n.name, 
+    SUM(cb.popn_total) / (ST_Area(n.geom) / 1000000.0) AS population_density_per_sqkm
+FROM nyc_census_blocks cb
+JOIN nyc_neighborhoods n ON ST_Intersects(cb.geom, n.geom)
+WHERE n.name IN ('East Village', 'West Village')
+GROUP BY n.name, n.geom;

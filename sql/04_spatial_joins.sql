@@ -1,3 +1,11 @@
+-- Spatial indexes for better performance
+CREATE INDEX idx_nyc_streets_geom ON nyc_streets USING GIST (geom);
+CREATE INDEX idx_nyc_neighborhoods_geom ON nyc_neighborhoods USING GIST (geom);
+CREATE INDEX idx_nyc_census_blocks_geom ON nyc_census_blocks USING GIST (geom);
+CREATE INDEX idx_nyc_subway_stations_geom ON nyc_subway_stations USING GIST (geom);
+
+
+
 -- Part 4: Spatial Joins Queries
 -- NOTE: These queries should complete in less than 30 seconds. If they are slow, check that spatial indexes exist.
 

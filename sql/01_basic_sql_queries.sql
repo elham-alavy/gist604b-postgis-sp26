@@ -12,7 +12,7 @@
 -- TODO: Write your query below
 -- Exercise 1
 SELECT SUM(popn_asian) AS asian_pop
-FROM nyc_census_blocks
+FROM nyc_census_blocks;
 
 
 -- Exercise 2: What is the population of Manhattan?

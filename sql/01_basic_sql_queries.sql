@@ -1,3 +1,5 @@
+-- Completed and verified against nyc PostGIS database
+
 -- Part 1: Basic SQL Queries
 
 -- Exercise 1: What is the Asian population of the City of New York?

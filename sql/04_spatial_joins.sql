@@ -1,3 +1,5 @@
+-- Completed and verified against nyc PostGIS database
+
 -- Spatial indexes for better performance
 CREATE INDEX idx_nyc_streets_geom ON nyc_streets USING GIST (geom);
 CREATE INDEX idx_nyc_neighborhoods_geom ON nyc_neighborhoods USING GIST (geom);

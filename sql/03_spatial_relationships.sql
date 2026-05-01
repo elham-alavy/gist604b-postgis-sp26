@@ -1,3 +1,4 @@
+-- Completed and verified against nyc PostGIS database
 -- Part 3: Spatial Relationships Queries
 
 -- Exercise 1: What is the geometry value for the street named 'Queensboro Brg'?

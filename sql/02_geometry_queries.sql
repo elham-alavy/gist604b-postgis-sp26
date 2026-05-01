@@ -1,3 +1,4 @@
+-- Completed and verified against nyc PostGIS database
 -- Part 2: Geometry Queries
 
 -- Exercise 1: What is the area of the 'New Brighton' neighborhood?
